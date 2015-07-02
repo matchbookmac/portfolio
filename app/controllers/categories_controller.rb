@@ -25,14 +25,16 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find(params[:profile_id])
     @category = Category.find(params[:id])
   end
 
   def update
+    @profile = Profile.find(category_params[:profile_ids].first)
     @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = "Thanks for updating your category, #{@category.language}!"
-      redirect_to profile_path(@category)
+      redirect_to profile_path(@profile)
     else
       render :edit
     end

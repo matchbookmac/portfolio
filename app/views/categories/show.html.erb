@@ -2,7 +2,7 @@
 <p>
   <div class="btn-group btn-group-sm btn-group-justified">
     <%= link_to "Edit #{@category.language}",
-        edit_category_path(@category),
+        edit_category_path(@category, profile_id: @profile.id),
         class: "btn btn-info" %>
     <%= link_to "Delete Category",
         category_path(@category),

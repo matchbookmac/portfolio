@@ -25,6 +25,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find(params[:profile_id])
     @project = Project.find(params[:id])
   end
 
