@@ -1,0 +1,8 @@
+<%= render "layouts/errors", object: @profile %>
+
+<%= bootstrap_form_for @profile do |f| %>
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+  <%= f.text_area :bio, rows: 7 %>
+  <%= f.submit class: "btn btn-success btn-block" %>
+<% end %>

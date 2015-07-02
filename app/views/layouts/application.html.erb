@@ -8,6 +8,9 @@
 </head>
 <body>
   <div class="col-md-2 clearfix">
+    <button class="btn btn-info btn-block" name="expand-nav">
+      <span class="glyphicon glyphicon-th-list"></span>
+    </button>
     <div class="list-group">
       <a href="#" class="list-group-item">
         <h4 class="list-group-item-heading">List group item heading</h4>
@@ -25,20 +28,22 @@
   </div>
 
   <div class="container">
-    <% if flash[:notice] %>
-      <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-danger alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
+    <div class="col-md-11">
+      <% if flash[:notice] %>
+        <div class="flash alert alert-success alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="flash alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
   </div>
 
