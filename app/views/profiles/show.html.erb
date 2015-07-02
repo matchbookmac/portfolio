@@ -3,13 +3,30 @@
   <%= @profile.bio %>
 </p>
 
+<div class="col-md-6">
+  <% if @profile.categories.any? %>
+    <% @profile.categories.each do |category| %>
+      <li><%= category.language %></li>
+    <% end %>
+  <% end %>
+</div>
+<div class="col-md-6">
+  <% if @profile.projects.any? %>
+    <% @profile.projects.each do |project| %>
+      <li><%= project.name %></li>
+    <% end %>
+  <% end %>
+</div>
 
 <% content_for :nav do %>
   <%= link_to "Edit #{@profile.first_name}'s Profile",
       edit_profile_path(@profile),
       class: "list-group-item" %>
-  <%= link_to "Add a Project Category",
+  <%= link_to "Add a Category",
       new_category_path(profile_id: @profile.id),
+      class: "list-group-item" %>
+  <%= link_to "Add a Project",
+      new_project_path(profile_id: @profile.id),
       class: "list-group-item" %>
   <%= link_to "Delete Profile",
       profile_path(@profile),

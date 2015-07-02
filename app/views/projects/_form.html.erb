@@ -1,9 +1,25 @@
 <%= render "layouts/errors", object: @project %>
 
 <%= bootstrap_form_for @project do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_area :description, rows: "3" %>
-  <%= f.text_field :URL %>
-  <%= f.text_field :repo_URL %>
+  <div class="col-md-6 clearfix">
+    <%= f.text_field :name %>
+    <%= f.text_field :repo_URL,
+        hide_label: true,
+        placeholder: "Repo URL" %>
+    <%= f.text_field :URL,
+        hide_label: true,
+        placeholder: "Live Project URL (if applicable)" %>
+    <%= f.collection_select(:categories,
+        Category.all,
+        :id,
+        :language,
+        { selected: @project.categories,
+          include_blank: false},
+          { multiple: true }) %>
+  </div>
+  <div class="col-md-6 clearfix">
+    <%= f.text_area :description, rows: "12" %>
+  </div>
+  <%= hidden_field(:profile, :id) %>
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>

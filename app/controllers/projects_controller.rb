@@ -9,13 +9,16 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @profile = Profile.find(params[:profile_id])
   end
 
   def create
+    @profile = Profile.find(params[:profile][:id])
     @project = Project.new(project_params)
     if @project.save
+      @project.profiles.push(@profile)
       flash[:notice] = "Thanks for adding your project, #{@project.name}!"
-      redirect_to project_path(@project)
+      redirect_to profile_path(@profile)
     else
       render :new
     end
