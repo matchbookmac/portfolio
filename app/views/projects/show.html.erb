@@ -1,22 +1,27 @@
-<h3> <%= @project.name %></h3>
-<p>
-  <div class="btn-group btn-group-sm btn-group-justified">
-    <% if @profile %>
-      <%= link_to "Edit #{@project.name}",
-          edit_project_path(@project, profile_id: @profile.id),
-          class: "btn btn-info" %>
-    <% else %>
-      <%= link_to "Edit #{@project.name}",
-          edit_project_path(@project),
-          class: "btn btn-info" %>
+<h3> <%= @project.name %>
+  <small class="muted">
+    <%= link_to "Github repo", "#{@project.repo_URL}" %> |
+    <% if @project.URL %>
+      <%= link_to "Live Project Page", "#{@project.URL}" %>
     <% end %>
-    <%= link_to "Delete Project",
-        project_path(@project),
-        class: "btn btn-danger",
-        data: { confirm: "Are you sure?" },
-        method: :delete %>
-  </div>
-</p>
-<p>
-  <%= @project.description %>
-</p>
+  </small>
+</h3>
+<hr>
+<p><span class="lead">Project Description: </span><%= @project.description %></p>
+
+<% content_for :nav do %>
+  <% if @profile %>
+    <%= link_to "Edit #{@project.name}",
+        edit_project_path(@project, profile_id: @profile.id),
+        class: "list-group-item" %>
+  <% else %>
+    <%= link_to "Edit #{@project.name}",
+        edit_project_path(@project),
+        class: "list-group-item" %>
+  <% end %>
+  <%= link_to "Delete Project",
+      project_path(@project),
+      class: "list-group-item",
+      data: { confirm: "Are you sure?" },
+      method: :delete %>
+<% end %>

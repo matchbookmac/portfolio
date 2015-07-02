@@ -1,38 +1,41 @@
-<h3> <%= @category.language %></h3>
-<p>
-  <div class="btn-group btn-group-sm btn-group-justified">
-    <% if @profile %>
-      <%= link_to "Edit #{@category.language}",
-          edit_category_path(@category, profile_id: @profile.id),
-          class: "btn btn-info" %>
-    <% else %>
-      <%= link_to "Edit #{@category.language}",
-          edit_category_path(@category),
-          class: "btn btn-info" %>
-    <% end %>
-    <%= link_to "Delete Category",
-        category_path(@category),
-        class: "btn btn-danger",
-        data: { confirm: "Are you sure?" },
-        method: :delete %>
-  </div>
-</p>
-<p>
-  <%= @category.description %>
-</p>
+<h3><%= @category.language %></h3>
+<hr>
+<div class="col-md-6">
+  <p><span class="lead">Category Description: </span><%= @category.description %></p>
+</div>
+
 <div class="col-md-6">
   <p class="lead">Projects</p>
-    <% if @profile %>
-      <% if @profile.projects_with_category(@category).any? %>
-        <% @profile.projects_with_category(@category).each do |project| %>
-          <li><%= link_to project.name, project_path(project, profile_id: @profile.id) %></li>
+    <div class="list-group">
+      <% if @profile %>
+        <% if @profile.projects_with_category(@category).any? %>
+          <% @profile.projects_with_category(@category).each do |project| %>
+            <%= link_to project.name, project_path(project, profile_id: @profile.id), class: "list-group-item" %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% if @category.projects.any? %>
+          <% @category.projects.each do |project| %>
+            <%= link_to project.name, project_path(project), class: "list-group-item" %>
+          <% end %>
         <% end %>
       <% end %>
-    <% else %>
-      <% if @category.projects.any? %>
-        <% @category.projects.each do |project| %>
-          <li><%= link_to project.name, project_path(project) %></li>
-        <% end %>
-      <% end %>
-    <% end %>
+    </div>
 </div>
+
+<% content_for :nav do %>
+  <% if @profile %>
+    <%= link_to "Edit #{@category.language}",
+        edit_category_path(@category, profile_id: @profile.id),
+        class: "list-group-item" %>
+  <% else %>
+    <%= link_to "Edit #{@category.language}",
+        edit_category_path(@category),
+        class: "list-group-item" %>
+  <% end %>
+  <%= link_to "Delete Category",
+      category_path(@category),
+      class: "list-group-item",
+      data: { confirm: "Are you sure?" },
+      method: :delete %>
+<% end %>
