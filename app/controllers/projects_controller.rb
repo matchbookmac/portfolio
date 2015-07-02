@@ -13,10 +13,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(params[:profile][:id])
+    @profile = Profile.find(project_params[:profile_ids].first)
     @project = Project.new(project_params)
     if @project.save
-      @project.profiles.push(@profile)
       flash[:notice] = "Thanks for adding your project, #{@project.name}!"
       redirect_to profile_path(@profile)
     else
@@ -46,6 +45,6 @@ class ProjectsController < ApplicationController
   end
 private
   def project_params
-    params.require(:project).permit(:name, :description, :repo_URL, :URL)
+    params.require(:project).permit(:name, :description, :repo_URL, :URL, { category_ids: [] }, { profile_ids: [] })
   end
 end

@@ -9,7 +9,7 @@
     <%= f.text_field :URL,
         hide_label: true,
         placeholder: "Live Project URL (if applicable)" %>
-    <%= f.collection_select(:categories,
+    <%= f.collection_select(:category_ids,
         Category.all,
         :id,
         :language,
@@ -20,6 +20,6 @@
   <div class="col-md-6 clearfix">
     <%= f.text_area :description, rows: "12" %>
   </div>
-  <%= hidden_field(:profile, :id) %>
+  <%= hidden_field :profile, :id, name: "project[profile_ids][]" %>
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>

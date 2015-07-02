@@ -13,10 +13,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(params[:profile][:id])
+    @profile = Profile.find(category_params[:profile_ids].first)
     @category = Category.new(category_params)
     if @category.save
-      @category.profiles.push(@profile)
       flash[:notice] = "Thanks for adding #{@category.language}, to your categories, #{@profile.first_name}!"
       redirect_to profile_path(@profile)
     else
@@ -32,7 +31,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:notice] = "Thanks for updating your category, #{@category.language}!"
-      redirect_to category_path(@category)
+      redirect_to profile_path(@category)
     else
       render :edit
     end
@@ -46,6 +45,6 @@ class CategoriesController < ApplicationController
   end
 private
   def category_params
-    params.require(:category).permit(:language, :description)
+    params.require(:category).permit(:language, :description, { profile_ids: [] })
   end
 end
