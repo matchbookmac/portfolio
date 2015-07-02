@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:profile_id])
     @category = Category.find(params[:id])
   end
 

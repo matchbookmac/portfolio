@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(params[:profile_id])
     @project = Project.find(params[:id])
   end
 

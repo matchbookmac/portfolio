@@ -6,14 +6,14 @@
 <div class="col-md-6">
   <% if @profile.categories.any? %>
     <% @profile.categories.each do |category| %>
-      <li><%= category.language %></li>
+      <li><%= link_to category.language, category_path(category, profile_id: @profile.id) %></li>
     <% end %>
   <% end %>
 </div>
 <div class="col-md-6">
   <% if @profile.projects.any? %>
     <% @profile.projects.each do |project| %>
-      <li><%= project.name %></li>
+      <li><%= link_to project.name, project_path(project, profile_id: @profile.id) %></li>
     <% end %>
   <% end %>
 </div>
