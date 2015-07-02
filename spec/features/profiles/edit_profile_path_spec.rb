@@ -5,7 +5,6 @@ describe "The edit profile path" do
     profile = Profile.create(first_name: "Ian", last_name: "MacDonald", bio: "Loves to code")
     visit edit_profile_path(profile)
     fill_in "profile_first_name", with: "Ian Charles"
-    fill_in "profile_last_name", with: "MacDonald Sr."
     fill_in "profile_bio", with: "I love to code and cook"
     click_on "Update Profile"
     expect(page).to have_content("updating")

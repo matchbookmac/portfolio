@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :profiles
   resources :categories
+  resources :projects
 end

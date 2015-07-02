@@ -1,0 +1,16 @@
+<h3> <%= @project.name %></h3>
+<p>
+  <div class="btn-group btn-group-sm btn-group-justified">
+    <%= link_to "Edit #{@project.name}",
+        edit_project_path(@project),
+        class: "btn btn-info" %>
+    <%= link_to "Delete Project",
+        project_path(@project),
+        class: "btn btn-danger",
+        data: { confirm: "Are you sure?" },
+        method: :delete %>
+  </div>
+</p>
+<p>
+  <%= @project.description %>
+</p>

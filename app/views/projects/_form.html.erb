@@ -1,0 +1,9 @@
+<%= render "layouts/errors", object: @project %>
+
+<%= bootstrap_form_for @project do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description, rows: "3" %>
+  <%= f.text_field :URL %>
+  <%= f.text_field :repo_URL %>
+  <%= f.submit class: "btn btn-success btn-block" %>
+<% end %>
