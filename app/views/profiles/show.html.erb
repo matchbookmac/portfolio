@@ -1,7 +1,14 @@
 <h3> <%= @profile.full_name %></h3>
 <p>
   <div class="btn-group btn-group-sm btn-group-justified">
-    <%= link_to "Edit #{@profile.first_name}'s Profile", edit_profile_path(@profile), class: "btn btn-info" %>
+    <%= link_to "Edit #{@profile.first_name}'s Profile",
+        edit_profile_path(@profile),
+        class: "btn btn-info" %>
+    <%= link_to "Delete Profile",
+        profile_path(@profile),
+        class: "btn btn-danger",
+        data: { confirm: "Are you sure?" },
+        method: :delete %>
   </div>
 </p>
 <p>

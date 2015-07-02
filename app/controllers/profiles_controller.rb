@@ -34,6 +34,13 @@ class ProfilesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+    flash[:alert] = "We are sorry to see you go :("
+    redirect_to profiles_path
+  end
 private
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :bio)
