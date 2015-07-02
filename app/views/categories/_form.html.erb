@@ -1,0 +1,7 @@
+<%= render "layouts/errors", object: @category %>
+
+<%= bootstrap_form_for @category do |f| %>
+  <%= f.text_field :language %>
+  <%= f.text_field :description %>
+  <%= f.submit class: "btn btn-success btn-block" %>
+<% end %>
