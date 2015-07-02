@@ -30,10 +30,11 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @profile = Profile.find(project_params[:profile_ids].first)
     @project = Project.find(params[:id])
     if @project.update(project_params)
       flash[:notice] = "Thanks for updating your project, #{@project.name}!"
-      redirect_to project_path(@project)
+      redirect_to profile_path(@profile)
     else
       render :edit
     end

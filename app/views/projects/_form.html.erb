@@ -13,7 +13,7 @@
         Category.all,
         :id,
         :language,
-        { selected: @project.categories,
+        { selected: @project.category_ids,
           include_blank: false},
           { multiple: true }) %>
   </div>
