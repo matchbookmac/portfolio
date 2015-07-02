@@ -4,37 +4,55 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
     @project = Project.find(params[:id])
   end
 
   def new
     @project = Project.new
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
   end
 
   def create
-    @profile = Profile.find(project_params[:profile_ids].first)
+    if project_params[:profile_ids]
+      @profile = Profile.find(project_params[:profile_ids].first)
+    end
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Thanks for adding your project, #{@project.name}!"
-      redirect_to profile_path(@profile)
+      if @profile
+        redirect_to profile_path(@profile)
+      else
+        redirect_to profiles_path
+      end
     else
       render :new
     end
   end
 
   def edit
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
     @project = Project.find(params[:id])
   end
 
   def update
-    @profile = Profile.find(project_params[:profile_ids].first)
+    if project_params[:profile_ids]
+      @profile = Profile.find(project_params[:profile_ids].first)
+    end
     @project = Project.find(params[:id])
     if @project.update(project_params)
       flash[:notice] = "Thanks for updating your project, #{@project.name}!"
-      redirect_to profile_path(@profile)
+      if @profile
+        redirect_to profile_path(@profile)
+      else
+        redirect_to profiles_path
+      end
     else
       render :edit
     end

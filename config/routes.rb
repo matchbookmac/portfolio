@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  @root_profile = Profile.all.where("first_name = ? AND last_name = ?", "Ian", "MacDonald").first
+  if Rails.env == "development"
+    @root_profile = Profile.all.where("first_name = ? AND last_name = ?", "Ian", "MacDonald").first
 
-  root to: "profiles#show", id: @root_profile.id
+    root to: "profiles#show", id: @root_profile.id
+  else
+    root to: "profiles#index"
+  end
 
   resources :profiles
   resources :categories

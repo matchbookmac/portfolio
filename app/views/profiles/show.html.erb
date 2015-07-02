@@ -4,6 +4,7 @@
 </p>
 
 <div class="col-md-6">
+  <p class="lead">Categories</p>
   <% if @profile.categories.any? %>
     <% @profile.categories.each do |category| %>
       <li><%= link_to category.language, category_path(category, profile_id: @profile.id) %></li>
@@ -11,6 +12,7 @@
   <% end %>
 </div>
 <div class="col-md-6">
+  <p class="lead">Projects</p>
   <% if @profile.projects.any? %>
     <% @profile.projects.each do |project| %>
       <li><%= link_to project.name, project_path(project, profile_id: @profile.id) %></li>

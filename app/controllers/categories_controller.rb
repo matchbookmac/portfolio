@@ -4,37 +4,55 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
     @category = Category.find(params[:id])
   end
 
   def new
     @category = Category.new
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
   end
 
   def create
-    @profile = Profile.find(category_params[:profile_ids].first)
+    if category_params[:profile_ids]
+      @profile = Profile.find(category_params[:profile_ids].first)
+    end
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "Thanks for adding #{@category.language}, to your categories, #{@profile.first_name}!"
-      redirect_to profile_path(@profile)
+      flash[:notice] = "Thanks for adding #{@category.language}, to your categories!"
+      if @profile
+        redirect_to profile_path(@profile)
+      else
+        redirect_to profiles_path
+      end
     else
       render :new
     end
   end
 
   def edit
-    @profile = Profile.find(params[:profile_id])
+    if params[:profile_id]
+      @profile = Profile.find(params[:profile_id])
+    end
     @category = Category.find(params[:id])
   end
 
   def update
-    @profile = Profile.find(category_params[:profile_ids].first)
+    if category_params[:profile_ids]
+      @profile = Profile.find(category_params[:profile_ids].first)
+    end
     @category = Category.find(params[:id])
     if @category.update(category_params)
-      flash[:notice] = "Thanks for updating your category, #{@category.language}!"
-      redirect_to profile_path(@profile)
+        flash[:notice] = "Thanks for updating your category, #{@category.language}!"
+      if @profile
+        redirect_to profile_path(@profile)
+      else
+        redirect_to profiles_path
+      end
     else
       render :edit
     end

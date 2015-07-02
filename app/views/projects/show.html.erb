@@ -1,9 +1,15 @@
 <h3> <%= @project.name %></h3>
 <p>
   <div class="btn-group btn-group-sm btn-group-justified">
-    <%= link_to "Edit #{@project.name}",
-        edit_project_path(@project, profile_id: @profile.id),
-        class: "btn btn-info" %>
+    <% if @profile %>
+      <%= link_to "Edit #{@project.name}",
+          edit_project_path(@project, profile_id: @profile.id),
+          class: "btn btn-info" %>
+    <% else %>
+      <%= link_to "Edit #{@project.name}",
+          edit_project_path(@project),
+          class: "btn btn-info" %>
+    <% end %>
     <%= link_to "Delete Project",
         project_path(@project),
         class: "btn btn-danger",

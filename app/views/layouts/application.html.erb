@@ -12,7 +12,11 @@
       <span class="glyphicon glyphicon-th-list"></span>
     </button>
     <div class="list-group">
-      <%= link_to "View Profile", profile_path(@profile), class: "list-group-item" %>
+      <% if @profile %>
+        <% if @profile.id %>
+          <%= link_to "View Profile", profile_path(@profile), class: "list-group-item" %>
+        <% end %>
+      <% end %>
       <%= yield :nav %>
     </div>
   </div>

@@ -14,4 +14,11 @@ describe Profile do
       expect(profile.full_name).to eq "Ian MacDonald"
     end
   end
+
+  context "#projects_with_category" do
+    it "will return and array of projects for a user that are in a certain category" do
+      profile = Profile.create(first_name: "Ian", last_name: "MacDonald", bio: "Loves to code")
+      
+    end
+  end
 end
