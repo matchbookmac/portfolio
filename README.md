@@ -1,3 +1,18 @@
+As an administrator, I want to be able to add, edit and delete categories for coding skills (Properties can include name and experience description. For example: Name => Ruby; Description => Ruby was the first language I began programming in. I have since built over 20 small apps using Sinatra, Rails, Postgres...)
+
+As an administrator, I want to be able to add, edit and delete coding projects for each skill/category (include name, description, link to Github).
+
+As a visiting user, I want to be able to see your personal information and a list of coding skills on the homepage.
+
+As a visiting user, I want to be able to click each coding skill category to see the description of your experience and the list of projects that reflect the skill/category.
+
+As a user, I want to be able to click on each project to get more information.
+
+
+categories
+projects
+personal
+
 ## APP NAME
 
 <a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
@@ -77,7 +92,7 @@ Copyright  (C)  2015  Ian C. MacDonald
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or    
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
