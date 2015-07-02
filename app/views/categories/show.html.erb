@@ -20,3 +20,19 @@
 <p>
   <%= @category.description %>
 </p>
+<div class="col-md-6">
+  <p class="lead">Projects</p>
+    <% if @profile %>
+      <% if @profile.projects_with_category(@category).any? %>
+        <% @profile.projects_with_category(@category).each do |project| %>
+          <li><%= link_to project.name, project_path(project, profile_id: @profile.id) %></li>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% if @category.projects.any? %>
+        <% @category.projects.each do |project| %>
+          <li><%= link_to project.name, project_path(project) %></li>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
