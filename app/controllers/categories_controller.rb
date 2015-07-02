@@ -9,13 +9,16 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @profile = Profile.find(params[:profile_id])
   end
 
   def create
+    @profile = Profile.find(params[:profile][:id])
     @category = Category.new(category_params)
     if @category.save
-      flash[:notice] = "Thanks for adding your category, #{@category.language}!"
-      redirect_to category_path(@category)
+      @category.profiles.push(@profile)
+      flash[:notice] = "Thanks for adding #{@category.language}, to your categories, #{@profile.first_name}!"
+      redirect_to profile_path(@profile)
     else
       render :new
     end
