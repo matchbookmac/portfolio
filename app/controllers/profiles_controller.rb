@@ -20,6 +20,20 @@ class ProfilesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      flash[:notice] = "Thanks for updating your profile, #{@profile.first_name}!"
+      redirect_to profile_path(@profile)
+    else
+      render :edit
+    end
+  end
 private
   def profile_params
     params.require(:profile).permit(:first_name, :last_name, :bio)
