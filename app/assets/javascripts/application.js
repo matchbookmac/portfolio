@@ -15,3 +15,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(".alert").alert();
+window.setTimeout(function() { $(".alert").alert().slideUp(); }, 5000);
