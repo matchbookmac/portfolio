@@ -3,35 +3,39 @@
 <p><span class="lead">Bio: </span><%= @profile.bio %></p>
 
 <div class="col-md-6">
-  <p class="lead">Categories</p>
-  <% if @profile.categories.any? %>
-    <% @profile.categories.each do |category| %>
-      <li><%= link_to category.language, category_path(category, profile_id: @profile.id) %></li>
+  <p class="lead text-center">Categories</p>
+  <div class="list-group">
+    <% if @profile.categories.any? %>
+      <% @profile.categories.each do |category| %>
+        <%= link_to category.language, category_path(category, profile_id: @profile.id), class: "list-group-item text-center" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 <div class="col-md-6">
-  <p class="lead">Projects</p>
-  <% if @profile.projects.any? %>
-    <% @profile.projects.each do |project| %>
-      <li><%= link_to project.name, project_path(project, profile_id: @profile.id) %></li>
+  <p class="lead text-center">Projects</p>
+  <div class="list-group">
+    <% if @profile.projects.any? %>
+      <% @profile.projects.each do |project| %>
+        <%= link_to project.name, project_path(project, profile_id: @profile.id), class: "list-group-item text-center" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <% content_for :nav do %>
-  <%= link_to "Edit #{@profile.first_name}'s Profile",
-      edit_profile_path(@profile),
-      class: "list-group-item" %>
   <%= link_to "Add a Category",
       new_category_path(profile_id: @profile.id),
       class: "list-group-item" %>
   <%= link_to "Add a Project",
       new_project_path(profile_id: @profile.id),
       class: "list-group-item" %>
+  <%= link_to "Edit #{@profile.first_name}'s Profile",
+      edit_profile_path(@profile),
+      class: "list-group-item text-warning" %>
   <%= link_to "Delete Profile",
       profile_path(@profile),
-      class: "list-group-item",
+      class: "list-group-item text-danger",
       data: { confirm: "Are you sure?" },
       method: :delete %>
 <% end %>
