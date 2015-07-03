@@ -19,37 +19,25 @@
 $(".flash").alert();
 window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
 
-$(document).ready(function () {
-  $("#contract-nav").click(function () {
-    // if($("#contract-nav").is(":visible")) {
-      $("#expand-nav").fadeOut(function () {
-        $("#profile-nav").hide()
-        $("#contract-nav").hide()
-        $("#expand-nav").show()
-        // ('slide', {
-        //   direction: "left"
-        // }, 500);
-      });
+var ready = function() {
+  $("#profile-nav").width("150px")
+
+  $("#nav-button").on("click", function(e){
+    toggleNav();
   });
-  $("#expand-nav").click(function () {
-    // if($("#expand-nav").is(":visible")) {
-      $("#contract-nav").fadeOut(function () {
-        $("#profile-nav").show()
-        $("#expand-nav").hide()
-        $("#contract-nav").show()
-        // ('slide', {
-        //   direction: "left"
-        // }, 500);
-      });
-  });
-});
+};
 
+function toggleNav(){
+  if ($("#profile-nav").outerWidth()>100) {
+    $("#profile-nav").animate({width:"75px"}, 100);
+    $("#profile-nav .nav-group").fadeOut(100);
+  } else {
+    navWidth="150px";
+    $("#profile-nav").animate({width:navWidth}, 100);
+    $("#profile-nav .nav-group").fadeIn(100);
+    $("#profile-nav .nav-group").animate({color:"#fff"});
+  }
+}
 
-
-// } else {
-//   $("#profile-nav").show('slide', {
-//     direction: "left"
-//   }, 500, function () {
-//     $("#expand-nav").fadeIn();
-//   });
-// }
+$(document).ready(ready);
+$(document).on("page:load", ready);
