@@ -1,4 +1,4 @@
-As an administrator, I want to be able to add, edit and delete categories for coding skills (Properties can include name and experience description. For example: Name => Ruby; Description => Ruby was the first language I began programming in. I have since built over 20 small apps using Sinatra, Rails, Postgres...)
+<!-- As an administrator, I want to be able to add, edit and delete categories for coding skills (Properties can include name and experience description. For example: Name => Ruby; Description => Ruby was the first language I began programming in. I have since built over 20 small apps using Sinatra, Rails, Postgres...)
 
 As an administrator, I want to be able to add, edit and delete coding projects for each skill/category (include name, description, link to Github).
 
@@ -11,9 +11,9 @@ As a user, I want to be able to click on each project to get more information.
 
 categories
 projects
-personal
+personal -->
 
-## APP NAME
+## Portfolio
 
 <a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
 
@@ -25,9 +25,9 @@ GNU General Public License, version 3 (see below). Copyright (c) 2015 Ian C. Mac
 
 ### Description
 
-**APP NAME**
+**Portfolio**
 
-<DESCRIPTION>
+A web app for displaying a personal portfolio. It is also setup so that multiple users can be added if a group portfolio is needed with individual user accounts
 
 ### Author(s)
 
@@ -39,7 +39,7 @@ This app was written in `Rails '4.2.3'`.
 
 Clone this repo with
 ```console
-> git clone https://github.com/matchbookmac/<REPO NAME>.git
+> git clone https://github.com/matchbookmac/portfolio.git
 ```
 
 Install gems:
@@ -60,7 +60,7 @@ Start App:
 > rails s
 ```
 
-### Database Schema
+<!-- ### Database Schema
 
 List of relations
 
@@ -85,7 +85,7 @@ bands_venues join table
 
 <relation_0>_id | <relation_1>_id
 --------|---------
-int     | int
+int     | int -->
 
 ### License ###
 Copyright  (C)  2015  Ian C. MacDonald
