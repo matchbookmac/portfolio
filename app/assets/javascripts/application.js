@@ -18,3 +18,38 @@
 
 $(".flash").alert();
 window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
+
+$(document).ready(function () {
+  $("#contract-nav").click(function () {
+    // if($("#contract-nav").is(":visible")) {
+      $("#expand-nav").fadeOut(function () {
+        $("#profile-nav").hide()
+        $("#contract-nav").hide()
+        $("#expand-nav").show()
+        // ('slide', {
+        //   direction: "left"
+        // }, 500);
+      });
+  });
+  $("#expand-nav").click(function () {
+    // if($("#expand-nav").is(":visible")) {
+      $("#contract-nav").fadeOut(function () {
+        $("#profile-nav").show()
+        $("#expand-nav").hide()
+        $("#contract-nav").show()
+        // ('slide', {
+        //   direction: "left"
+        // }, 500);
+      });
+  });
+});
+
+
+
+// } else {
+//   $("#profile-nav").show('slide', {
+//     direction: "left"
+//   }, 500, function () {
+//     $("#expand-nav").fadeIn();
+//   });
+// }
