@@ -4,7 +4,9 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    # binding.pry
+    # if request.path == "profiles/"
+      @profile = Profile.find(params[:id])
   end
 
   def new
