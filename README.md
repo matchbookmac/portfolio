@@ -62,7 +62,7 @@ Start App:
 
 #### List of relations
         Name        | Type  
---------------------+-------
+--------------------|-------
 categories          | table
 categories_profiles | table
 categories_projects | table
