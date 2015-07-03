@@ -62,30 +62,50 @@ Start App:
 
 <!-- ### Database Schema
 
-List of relations
+#### List of relations
+        Name        | Type  
+--------------------+-------
+categories          | table
+categories_profiles | table
+categories_projects | table
+profiles            | table
+profiles_projects   | table
+projects            | table
 
-   Name     | Type  
- ---------- | -------
- <relation_0>    | table
- <relation_1>   | table
+#### Categories
+id  | language | description | created_at | updated_at
+----|----------|-------------|------------|------------
+int | string   | string      | datetime   | datetime
 
-<relation_0> table
+####  Profiles
 
-id  | first_name | last_name | stylist_id
-----|------------|-----------|------------
-int | varchar    | varchar   | int
+id  | first_name | last_name |  bio | created_at  |   updated_at
+----|------------|-----------|------|-------------|--------------
+int | string     | string    | text |   datetime  | datetime
 
-<relation_1> table
+####  Projects
 
-id  | first_name | last_name
-----|------------|-----------
+id  | name   | description | repo_URL | URL    | created_at | updated_at
+----|--------|-------------|----------|--------|------------|-----------
+int | string | string      | string   | string |  datetime  | datetime
+
+#### Categories Projects
+
+id  | category_id | project_id
+----|-------------|------------
+int | varchar     | varchar
+
+#### Categories Profiles
+
+id  | profile_id | category_id
+----|------------|-------------
 int | varchar    | varchar
 
-bands_venues join table
+#### Profiles Projects
 
-<relation_0>_id | <relation_1>_id
---------|---------
-int     | int -->
+id  | profile_id | project_id
+----|------------|------------
+int | varchar    | varchar
 
 ### License ###
 Copyright  (C)  2015  Ian C. MacDonald
