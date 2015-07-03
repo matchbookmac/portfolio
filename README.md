@@ -45,6 +45,7 @@ Clone this repo with
 Install gems:
 
 ```console
+> cd portfolio
 > bundle install
 ```
 
@@ -52,7 +53,6 @@ Create database
 ```console
 > rake db:create
 > rake db:migrate
-> rake db:test:prepare
 ```
 
 Start App:
