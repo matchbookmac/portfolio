@@ -60,8 +60,6 @@ Start App:
 > rails s
 ```
 
-<!-- ### Database Schema
-
 #### List of relations
         Name        | Type  
 --------------------+-------
