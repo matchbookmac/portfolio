@@ -7,16 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <div class="col-xs-4 col-sm-2 col-md-2 clearfix" id="profile-nav">
     <div class="list-group">
       <a class="list-group-item"><span class="glyphicon glyphicon-th-list center-block" id="nav-button"></span></a>
     </div>
     <div class="list-group nav-group">
-      <% if @profile %>
-        <% if @profile.id %>
-          <%= link_to "View Profile", profile_path(@profile), class: "list-group-item" %>
-        <% end %>
+      <% if current_user %>
+        <%= link_to "View Profile", user_path(current_user), class: "list-group-item" %>
       <% end %>
       <%= yield :nav %>
     </div>

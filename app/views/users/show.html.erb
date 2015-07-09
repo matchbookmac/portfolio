@@ -1,17 +1,17 @@
-<h3> <%= @user.full_name %>
+<h3> <%= current_user.full_name %>
   <small class="muted">
-    <%= link_to "Github", "#{@user.github_URL}" %>
+    <%= link_to "Github", "#{current_user.github_URL}" %>
   </small>
 </h3>
 <hr>
-<p><span class="lead">Bio: </span><%= @user.bio %></p>
+<p><span class="lead">Bio: </span><%= current_user.bio %></p>
 
 <div class="col-md-6">
   <p class="lead text-center">Categories</p>
   <div class="list-group">
-    <% if @user.categories.any? %>
-      <% @user.categories.each do |category| %>
-        <%= link_to category.language, category_path(category, user_id: @user.id), class: "list-group-item text-center" %>
+    <% if current_user.categories.any? %>
+      <% current_user.categories.each do |category| %>
+        <%= link_to category.language, category_path(category, user_id: current_user.id), class: "list-group-item text-center" %>
       <% end %>
     <% end %>
   </div>
@@ -19,9 +19,9 @@
 <div class="col-md-6">
   <p class="lead text-center">Projects</p>
   <div class="list-group">
-    <% if @user.projects.any? %>
-      <% @user.projects.each do |project| %>
-        <%= link_to project.name, project_path(project, user_id: @user.id), class: "list-group-item text-center" %>
+    <% if current_user.projects.any? %>
+      <% current_user.projects.each do |project| %>
+        <%= link_to project.name, project_path(project, user_id: current_user.id), class: "list-group-item text-center" %>
       <% end %>
     <% end %>
   </div>
@@ -29,16 +29,16 @@
 
 <% content_for :nav do %>
   <%= link_to "Add a Category",
-      new_category_path(user_id: @user.id),
+      new_category_path(user_id: current_user.id),
       class: "list-group-item" %>
   <%= link_to "Add a Project",
-      new_project_path(user_id: @user.id),
+      new_project_path(user_id: current_user.id),
       class: "list-group-item" %>
-  <%= link_to "Edit #{@user.first_name}'s Profile",
-      edit_user_path(@user),
+  <%= link_to "Edit #{current_user.first_name}'s Profile",
+      edit_user_path(current_user),
       class: "list-group-item text-warning" %>
   <%= link_to "Delete Profile",
-      user_path(@user),
+      user_path(current_user),
       class: "list-group-item text-danger",
       data: { confirm: "Are you sure?" },
       method: :delete %>
