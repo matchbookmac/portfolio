@@ -53,6 +53,7 @@ Create database
 ```console
 > rake db:create
 > rake db:migrate
+> rake db:seed
 ```
 
 Start App:
