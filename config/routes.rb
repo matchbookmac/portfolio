@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  if Rails.env == "development"
-    @root_profile = Profile.all.where("first_name = ? AND last_name = ?", "Ian", "MacDonald").first
+  # if Rails.env == "development"
+  #   @root_user = User.all.where("first_name = ? AND last_name = ?", "Ian", "MacDonald").first
+  #
+  #   root to: "users#show", id: @root_user.id, :as => "/"
+  #
+  #   get "/" => "users#show", id: @root_user.id, :as => "/"
+  #   get "users/:id" => redirect("/"), as: :user
+  # else
+    root to: "users#index"
+  # end
 
-    root to: "profiles#show", id: @root_profile.id, :as => "/"
-
-    get "/" => "profiles#show", id: @root_profile.id, :as => "/"
-    get "profiles/:id" => redirect("/"), as: :profile
-  else
-    root to: "profiles#index"
-  end
-
-  resources :profiles
+  resources :users
   resources :categories
   resources :projects
 

@@ -7,10 +7,10 @@
 <div class="col-md-6">
   <p class="lead">Projects</p>
     <div class="list-group">
-      <% if @profile %>
-        <% if @profile.projects_with_category(@category).any? %>
-          <% @profile.projects_with_category(@category).each do |project| %>
-            <%= link_to project.name, project_path(project, profile_id: @profile.id), class: "list-group-item" %>
+      <% if @user %>
+        <% if @user.projects_with_category(@category).any? %>
+          <% @user.projects_with_category(@category).each do |project| %>
+            <%= link_to project.name, project_path(project, user_id: @user.id), class: "list-group-item" %>
           <% end %>
         <% end %>
       <% else %>
@@ -24,9 +24,9 @@
 </div>
 
 <% content_for :nav do %>
-  <% if @profile %>
+  <% if @user %>
     <%= link_to "Edit #{@category.language}",
-        edit_category_path(@category, profile_id: @profile.id),
+        edit_category_path(@category, user_id: @user.id),
         class: "list-group-item" %>
   <% else %>
     <%= link_to "Edit #{@category.language}",

@@ -20,8 +20,8 @@
   <div class="col-md-6 clearfix">
     <%= f.text_area :description, rows: "12" %>
   </div>
-  <% if params[:profile_id] %>
-    <%= hidden_field :profile, :id, name: "project[profile_ids][]" %>
+  <% if params[:user_id] %>
+    <%= hidden_field :user, :id, name: "project[user_ids][]" %>
   <% end %>
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>
