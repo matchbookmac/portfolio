@@ -1,6 +1,6 @@
 <h3> <%= @user.full_name %>
   <small class="muted">
-    <%= link_to "Github", "#{@user.github_URL}" %>
+    <%= link_to "Github", @user.github_URL, target: "#" %>
   </small>
 </h3>
 <hr>
