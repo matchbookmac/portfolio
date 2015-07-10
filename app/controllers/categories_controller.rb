@@ -12,15 +12,12 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-    end
+
   end
 
   def create
-    if category_params[:user_ids]
-      @user = User.find(category_params[:user_ids].first)
-    end
+
+binding.pry
     @category = Category.new(category_params)
     if @category.save
       flash[:notice] = "Thanks for adding #{@category.language}, to your categories!"

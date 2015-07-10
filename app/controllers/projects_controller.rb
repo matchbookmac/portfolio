@@ -1,20 +1,16 @@
 class ProjectsController < ApplicationController
+  before_action :set_user_ids, only: [:new, :edit]
+
   def index
     @projects = Project.all
   end
 
   def show
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-    end
     @project = Project.find(params[:id])
   end
 
   def new
     @project = Project.new
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-    end
   end
 
   def create
@@ -35,9 +31,6 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-    end
     @project = Project.find(params[:id])
   end
 
@@ -64,8 +57,14 @@ class ProjectsController < ApplicationController
     flash[:alert] = "#{@project.name} is gone!"
     redirect_to projects_path
   end
+
 private
+
   def project_params
     params.require(:project).permit(:name, :description, :repo_URL, :URL, { category_ids: [] }, { user_ids: [] })
+  end
+
+  def set_user_ids
+    # @user = User.find(params[:user_id])
   end
 end

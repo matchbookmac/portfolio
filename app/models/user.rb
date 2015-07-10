@@ -3,13 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
+
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :projects
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :bio, presence: true
 
   def projects_with_category(category)
     return_projects = []
