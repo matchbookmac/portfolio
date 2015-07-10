@@ -30,6 +30,7 @@
 <% content_for :nav do %>
   <%= link_to "View Categories", categories_path, class: "list-group-item" %>
   <%= link_to "View Projects", projects_path, class: "list-group-item" %>
+  <%= link_to "View Posts", posts_path, class: "list-group-item" %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Add a Category",
         new_category_path(user_id: @user.id),

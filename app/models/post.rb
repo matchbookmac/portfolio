@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :content, presence: true
+
+  scope :not_comments, -> { where(comment: false) }
 end

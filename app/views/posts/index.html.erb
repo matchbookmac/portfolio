@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Posts</h1>
@@ -30,4 +32,20 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+
+
+<h3 class="text-center">Posts</h3>
+<div class="list-group">
+  <% if Posts.all.any? %>
+    <% Posts.all.each do |project| %>
+      <%= link_to project.name, project_path(project), class: "list-group-item text-center" %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= content_for "nav" do %>
+  <%= render "nav_content" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
+  <% end %>
+<% end %>
