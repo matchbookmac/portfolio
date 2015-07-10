@@ -15,7 +15,7 @@ personal -->
 
 ## Portfolio
 
-<a href="APP LINK IF APPLICABLE" target="#"><APP LINK NAME></a>
+<a href="http://agile-shelf-6960.herokuapp.com/" target="#">Live Portfolio on Heroku</a>
 
 By Ian MacDonald (<a href="https://github.com/matchbookmac" target="#">GitHub</a>)
 
