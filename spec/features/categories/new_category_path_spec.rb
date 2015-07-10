@@ -18,4 +18,12 @@ describe "The new category path" do
     click_on "Create Category"
     expect(page).to have_content("errors")
   end
+
+  it "will fail to let the user create a category if they are not admin" do
+    admin = create(:admin_with_categories)
+    user = create(:user)
+    login_as user, scope: :user
+    visit new_category_path
+    expect(page).to have_content("permissions")
+  end
 end

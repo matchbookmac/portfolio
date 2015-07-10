@@ -1,5 +1,7 @@
-class ProjectsController < ApplicationController
+class ProjectsController < AdminController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+
+  before_filter :ensure_admin!, except: [:index, :show]
 
   def index
     @projects = Project.all

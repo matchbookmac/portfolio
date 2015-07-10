@@ -9,7 +9,7 @@
 
 <%= content_for :nav do %>
   <%= render 'nav_content' %>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Add a Project",
         new_project_path,
         class: "list-group-item" %>

@@ -16,7 +16,7 @@
       <%= f.url_field :github_URL, placeholder: "https://github.com/<YOUR USERNAME>" %>
     </div>
     <div class="col-md-12">
-      <%= f.text_area :bio, layout: :default, rows: 9, hide_label: true %>
+      <%= f.text_area :bio, layout: :default, rows: 9 %>
     </div>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

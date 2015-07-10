@@ -11,7 +11,7 @@
 
 <%= content_for :nav do %>
   <%= render 'nav_content' %>
-  <% if current_user.admin? %>
+  <% if user_signed_in? && current_user.admin? %>
     <%= link_to "Add a Category",
         new_category_path,
         class: "list-group-item" %>

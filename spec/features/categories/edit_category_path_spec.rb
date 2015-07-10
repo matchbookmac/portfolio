@@ -18,4 +18,12 @@ describe "The edit category path" do
     click_on "Update Category"
     expect(page).to have_content("errors")
   end
+
+  it "will fail to let the user edit a category if they are not admin" do
+    admin = create(:admin_with_categories)
+    user = create(:user)
+    login_as user, scope: :user
+    visit edit_category_path(admin.categories.first)
+    expect(page).to have_content("permissions")
+  end
 end

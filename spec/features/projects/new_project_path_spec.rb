@@ -20,4 +20,12 @@ describe "The new project path" do
     click_on "Create Project"
     expect(page).to have_content("errors")
   end
+
+  it "will fail to let the user create a project if they are not admin" do
+    admin = create(:admin_with_projects)
+    user = create(:user)
+    login_as user, scope: :user
+    visit new_project_path
+    expect(page).to have_content("permissions")
+  end
 end
