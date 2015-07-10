@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-10T13:43:35-07:00">2015-07-10T13:43:35-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-07-10T13:49:15-07:00">2015-07-10T13:49:15-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.22%</span></span>
+    (<span class="covered_percent"><span class="green">98.29%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.25
+         1.29
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>38</b> files in total.
-    <b>394</b> relevant lines. 
-    <span class="green"><b>387</b> lines covered</span> and
+    <b>39</b> files in total.
+    <b>409</b> relevant lines. 
+    <span class="green"><b>402</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>3.8</td>
+        <td>5.8</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>14</td>
         <td>13</td>
         <td>1</td>
-        <td>1.4</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -391,6 +391,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#e4a97b69e859ab997ea3d524a8ea8734b6c27646" class="src_link" title="spec/features/users/sign_in_path_spec.rb">spec/features/users/sign_in_path_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>20</td>
+        <td>15</td>
+        <td>15</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#58fcb88893f0d4d64e72f77bf62b4a8a3adb8a4c" class="src_link" title="spec/models/category_spec.rb">spec/models/category_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>10</td>
@@ -532,20 +542,20 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="13">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="16" data-linenumber="13">
+          <span class="hits">16</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:sign_in) { |params| params.permit( :email) }</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="14">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="15" data-linenumber="14">
+          <span class="hits">15</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:sign_up) { |params| params.permit(:first_name, :last_name, :email, :password) }</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="15">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="15" data-linenumber="15">
+          <span class="hits">15</span>
           
           <code class="ruby">    devise_parameter_sanitizer.for(:account_update) { |params| params.permit(:first_name, :last_name, :bio, :email, :current_password) }</code>
         </li>
@@ -1366,8 +1376,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="5">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="5">
+          <span class="hits">8</span>
           
           <code class="ruby">    @users = User.all</code>
         </li>
@@ -6359,6 +6369,144 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="e4a97b69e859ab997ea3d524a8ea8734b6c27646">
+  <div class="header">
+    <h3>spec/features/users/sign_in_path_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &quot;rails_helper&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &quot;The sign in path&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;will let the user sign in&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user = create(:user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit new_user_session_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;user_email&quot;, with: user.email</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;user_password&quot;, with: user.password</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;Log in&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;successfully&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;will fail to let a user sign in if the form is incorrect&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    user = create(:user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit new_user_session_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;user_password&quot;, with: user.password</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_on &quot;Log in&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;Invalid&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
