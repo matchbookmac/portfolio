@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     # binding.pry
     # if request.path == "users/"
+    @user = User.find(params[:id])
   end
 
   # def new

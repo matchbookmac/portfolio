@@ -1,1 +1,9 @@
-<h1>Hi!</h1>
+
+<%= content_for :nav do %>
+  <%= render 'nav_content' %>
+  <% if user_signed_in? %>
+    <%= link_to "Add a Project",
+        new_project_path(user_id: current_user.id),
+        class: "list-group-item" %>
+  <% end %>
+<% end %>
