@@ -3,7 +3,6 @@ require "rails_helper"
 describe User do
   it { should validate_presence_of :first_name }
   it { should validate_presence_of :last_name }
-  it { should validate_presence_of :bio }
 
   it { should have_and_belong_to_many :categories}
   it { should have_and_belong_to_many :projects}
@@ -11,7 +10,7 @@ describe User do
   describe "#full_name" do
     it "will return the full name of the profile" do
       user = FactoryGirl.create(:user)
-      expect(user.full_name).to eq "Ian MacDonald"
+      expect(user.full_name).to eq "#{user.first_name} #{user.last_name}"
     end
   end
 

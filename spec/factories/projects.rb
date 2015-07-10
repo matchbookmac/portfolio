@@ -1,7 +1,21 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "App ##{n}"
+  end
+
   factory :project do
-    name "Clinical Trial Scheduler"
-    description "An app for scheduling Clinical trials"
-    repo_URL "https://github.com/alexcaste/clinical_trials"
+    name
+    description "An app"
+    repo_URL "https://github.com/person/stuff"
+
+    factory :projects do
+      transient do
+        projects_count 1
+      end
+
+      after(:create) do |project, evaluator|
+        create_list(:project, evaluator.projects_count)
+      end
+    end
   end
 end

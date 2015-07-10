@@ -1,15 +1,25 @@
 FactoryGirl.define do
   factory :user do
-    first_name "Ian"
-    last_name  "MacDonald"
+    first_name "Friendly"
+    last_name  "User"
     bio "I love code"
-    admin true
-  end
+    email "friendly@user.com"
+    password "12341234"
+    admin false
 
-  factory :admin, class: User do
-    first_name "Ian"
-    last_name  "MacDonald"
-    bio "I love code"
-    admin true
+    trait :admin do
+      admin true
+      email "admin@user.com"
+      password "admin1234"
+    end
+
+    factory :admin, traits: [:admin]
+
+    factory :admin_with_projects, traits: [:admin] do
+
+      after(:create) do |user|
+        user.projects = [create(:projects)]
+      end
+    end
   end
 end
