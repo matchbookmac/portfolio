@@ -10,7 +10,7 @@ FactoryGirl.define do
 
     factory :projects do
       transient do
-        projects_count 1
+        projects_count 2
       end
 
       after(:create) do |project, evaluator|

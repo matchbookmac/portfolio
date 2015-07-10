@@ -16,9 +16,14 @@ FactoryGirl.define do
     factory :admin, traits: [:admin]
 
     factory :admin_with_projects, traits: [:admin] do
-
       after(:create) do |user|
         user.projects = [create(:projects)]
+      end
+    end
+
+    factory :admin_with_categories, traits: [:admin] do
+      after(:create) do |user|
+        user.categories = [create(:categories)]
       end
     end
   end
