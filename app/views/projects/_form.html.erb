@@ -9,19 +9,29 @@
     <%= f.text_field :URL,
         hide_label: true,
         placeholder: "Live Project URL (if applicable)" %>
-    <%= f.collection_select(:category_ids,
-        Category.all,
-        :id,
-        :language,
-        { selected: @project.category_ids,
-          include_blank: false},
-          { multiple: true }) %>
+    <div class="col-md-6 clearfix">
+      <%= f.collection_select(:category_ids,
+          Category.all,
+          :id,
+          :language,
+          { selected: @project.category_ids,
+            include_blank: false, label: "Categories"},
+            { multiple: true }) %>
+    </div>
+    <div class="col-md-6 clearfix">
+      <%= f.collection_select(:user_ids,
+          User.all,
+          :id,
+          :full_name,
+          { selected: @project.user_ids,
+            include_blank: false, label: "Users"},
+            { multiple: true }) %>
+    </div>
   </div>
   <div class="col-md-6 clearfix">
     <%= f.text_area :description, rows: "12" %>
   </div>
-  <% if params[:user_id] %>
-    <%= hidden_field :user, :id, name: "project[user_ids][]" %>
-  <% end %>
-  <%= f.submit class: "btn btn-success btn-block" %>
+  <div class="col-md-12 clearfix">
+    <%= f.submit class: "btn btn-success btn-block" %>
+  </div>
 <% end %>

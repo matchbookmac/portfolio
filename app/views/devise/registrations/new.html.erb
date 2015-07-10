@@ -5,7 +5,6 @@
   <%= devise_error_messages! %>
     <%= f.text_field :first_name %>
     <%= f.text_field :last_name %>
-    <%= f.url_field :github_URL, placeholder: "https://github.com/<YOUR USERNAME>" %>
     <%= f.email_field :email, autofocus: true %>
 
     <% if @minimum_password_length %>

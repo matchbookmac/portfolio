@@ -11,16 +11,11 @@
 <p><span class="lead">Project Description: </span><%= @project.description %></p>
 
 <% content_for :nav do %>
-  <% if @user %>
-    <%= link_to "Edit #{@project.name}",
-        edit_project_path(@project, user_id: @user.id),
-        class: "list-group-item" %>
-  <% else %>
-    <%= link_to "Edit #{@project.name}",
-        edit_project_path(@project),
-        class: "list-group-item" %>
-  <% end %>
-  <%= link_to "Delete Project",
+  <%= render "nav_content" %>
+  <%= link_to "Edit #{@project.name}",
+      edit_project_path(@project),
+      class: "list-group-item" %>
+  <%= link_to "Delete #{@project.name}",
       project_path(@project),
       class: "list-group-item",
       data: { confirm: "Are you sure?" },

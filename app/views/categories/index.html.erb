@@ -1,8 +1,19 @@
+<h3 class="text-center">Categories</h3>
+<div class="list-group">
+  <% if Category.all.any? %>
+    <% Category.all.each do |category| %>
+      <%= link_to category.language, category_path(category), class: "list-group-item text-center" %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
 <%= content_for :nav do %>
   <%= render 'nav_content' %>
-  <% if user_signed_in? %>
+  <% if current_user.admin? %>
     <%= link_to "Add a Category",
-        new_category_path(user_id: current_user.id),
+        new_category_path,
         class: "list-group-item" %>
   <% end %>
 <% end %>

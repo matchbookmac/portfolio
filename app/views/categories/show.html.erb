@@ -24,16 +24,11 @@
 </div>
 
 <% content_for :nav do %>
-  <% if @user %>
-    <%= link_to "Edit #{@category.language}",
-        edit_category_path(@category, user_id: @user.id),
-        class: "list-group-item" %>
-  <% else %>
-    <%= link_to "Edit #{@category.language}",
-        edit_category_path(@category),
-        class: "list-group-item" %>
-  <% end %>
-  <%= link_to "Delete Category",
+  <%= render "nav_content" %>
+  <%= link_to "Edit #{@category.language}",
+      edit_category_path(@category),
+      class: "list-group-item" %>
+  <%= link_to "Delete #{@category.language}",
       category_path(@category),
       class: "list-group-item",
       data: { confirm: "Are you sure?" },

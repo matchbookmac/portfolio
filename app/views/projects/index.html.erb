@@ -1,9 +1,17 @@
+<h3 class="text-center">Projects</h3>
+<div class="list-group">
+  <% if Project.all.any? %>
+    <% Project.all.each do |project| %>
+      <%= link_to project.name, project_path(project), class: "list-group-item text-center" %>
+    <% end %>
+  <% end %>
+</div>
 
 <%= content_for :nav do %>
   <%= render 'nav_content' %>
   <% if user_signed_in? %>
     <%= link_to "Add a Project",
-        new_project_path(user_id: current_user.id),
+        new_project_path,
         class: "list-group-item" %>
   <% end %>
 <% end %>

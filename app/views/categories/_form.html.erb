@@ -3,8 +3,8 @@
 <%= bootstrap_form_for @category do |f| %>
   <%= f.text_field :language %>
   <%= f.text_field :description %>
-  <% if params[:user_id] %>
-    <%= hidden_field :user, :id, name: "category[user_ids][]" %>
+  <% User.all.each do |user| %>
+    <%= f.hidden_field :user_ids, multiple: true, value: user.id %>
   <% end %>
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>

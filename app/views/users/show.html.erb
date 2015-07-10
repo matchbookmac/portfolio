@@ -21,7 +21,7 @@
   <div class="list-group">
     <% if @user.projects.any? %>
       <% @user.projects.each do |project| %>
-        <%= link_to project.name, project_path(project, user_id: @user.id), class: "list-group-item text-center" %>
+        <%= link_to project.name, project_path(project), class: "list-group-item text-center" %>
       <% end %>
     <% end %>
   </div>
