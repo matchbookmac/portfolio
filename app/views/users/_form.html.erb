@@ -9,8 +9,6 @@
     <%= f.text_field :last_name %>
     <%= f.text_field :github_URL, placeholder: "https://github.com/<YOUR USERNAME>" %>
   </div>
-  <div class="col-md-6">
-    <%= f.text_area :bio, layout: :default, rows: 9, hide_label: true %>
-  </div>
+  
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>

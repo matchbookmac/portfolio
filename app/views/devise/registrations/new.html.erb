@@ -19,6 +19,9 @@
   </div>
   <% end %>
   <br>
-  <%= render "devise/shared/links" %>
 
 </div>
+
+<%= content_for :nav do %>
+  <%= render "devise/shared/links" %>
+<% end %>

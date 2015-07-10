@@ -12,6 +12,8 @@
         <%= f.submit "Log in", class: "btn btn-default btn-block" %>
       </div>
       <br>
-      <%= render "devise/shared/links" %>
   <% end %>
 </div>
+<%= content_for :nav do %>
+  <%= render "devise/shared/links" %>
+<% end %>

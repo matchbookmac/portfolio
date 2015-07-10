@@ -38,7 +38,7 @@
         new_project_path(user_id: @user.id),
         class: "list-group-item" %>
     <%= link_to "Edit #{@user.first_name}'s Profile",
-        edit_user_path(@user),
+        edit_user_registration_path,
         class: "list-group-item text-warning" %>
     <%= link_to "Delete Profile",
         user_path(@user),
