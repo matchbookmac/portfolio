@@ -843,6 +843,19 @@
         null,
         null
       ],
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/sign_out_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/ianmacdonald/Sites/portfolio/spec/models/category_spec.rb": [
         1,
         null,
@@ -996,9 +1009,9 @@
         1,
         null,
         1,
+        17,
         16,
-        15,
-        15,
+        16,
         null,
         null
       ],
@@ -1007,7 +1020,7 @@
         1,
         null,
         1,
-        8,
+        10,
         null,
         null,
         1,
@@ -1094,6 +1107,6 @@
         null
       ]
     },
-    "timestamp": 1436561355
+    "timestamp": 1436561532
   }
 }
