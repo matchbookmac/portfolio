@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :projects
+  has_many :posts
 
   validates :first_name, presence: true
   validates :last_name, presence: true

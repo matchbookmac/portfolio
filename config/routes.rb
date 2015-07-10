@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   devise_for :users
   if Rails.env == "development"
     @root_user = User.all.where("first_name = ? AND last_name = ?", "Ian", "MacDonald").first
