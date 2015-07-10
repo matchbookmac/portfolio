@@ -1,6 +1,8 @@
 class CategoriesController < AdminController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
+  before_filter :ensure_admin!, except: [:index, :show]
+
   def index
     @categories = Category.all
   end

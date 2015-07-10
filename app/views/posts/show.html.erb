@@ -1,24 +1,53 @@
-<p id="notice"><%= notice %></p>
+<h3>
+  <%= @post.title %>
+  <small class="muted"><%= @post.user.full_name %></small>
+</h3>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="col-md-9">
+  <p>
+    <%= @post.content %>
+  </p>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+<div class="col-md-3">
+  <% if user_signed_in? %>
+    <%= bootstrap_form_for @comment do |f| %>
+      <%= render "layouts/errors", object: @post %>
 
-<p>
-  <strong>Post:</strong>
-  <%= @post.post_id %>
-</p>
+      <%= f.text_area :content, rows: 3, hide_label: true %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.hidden_field :comment, value: true %>
+      <div class="actions">
+        <%= f.submit "Comment", class: "btn btn-default btn-block" %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to "Sign up to comment", new_user_registration_path, class: "btn btn-default btn-block" %>
+  <% end %>
+  <hr>
+  <% if @post.posts.any? %>
+    <% @post.posts.each do |comment| %>
+      <blockquote>
+        <p><%= comment.content %>
+            <% if user_signed_in? && current_user.admin? %>
+              <%= link_to "",
+                  post_path(comment),
+                  class: "glyphicon glyphicon-remove pull-right",
+                  data: { confirm: "Are you sure?" },
+                  method: :delete %>
+            <% end %>
+        </p>
+        <footer><%= comment.user.first_name %></footer>
+      </blockquote>
+    <% end %>
+  <% end %>
+</div>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @post.comment %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= content_for :nav do %>
+  <%= render "nav_content" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "list-group-item" %>
+    <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
+  <% end %>
+<% end %>

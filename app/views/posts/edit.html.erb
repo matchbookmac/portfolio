@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= content_for :nav do %>
+  <%= render "nav_content" %>
+  <%= link_to 'Show', post_path(@post), class: "list-group-item" %>
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
+  <% end %>
+<% end %>

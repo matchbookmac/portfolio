@@ -5,6 +5,7 @@ describe Post do
 
   it { should belong_to :user }
   it { should belong_to :post }
+  it { should have_many :posts }
 
   describe ".not_comments" do
     it "will return an array of posts that are not comments" do

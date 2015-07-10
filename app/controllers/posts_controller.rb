@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class PostsController < AdminController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    @comment = Post.new
   end
 
   # GET /posts/new
@@ -23,10 +24,20 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+    if @post.comment
+      if @post.save
+        redirect_to @post.post, notice: 'comment was successfully created.'
+      else
+        redirect_to @post
+      end
+    elsif current_user.admin?
+      if @post.save
+        redirect_to @post, notice: 'post was successfully created.'
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to @post.post, alert: 'you do not have the permissions to create a post'
     end
   end
 
@@ -45,6 +56,7 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -53,6 +65,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:content, :user_id, :post_id, :comment)
+      params.require(:post).permit(:content, :user_id, :post_id, :comment, :title)
     end
 end

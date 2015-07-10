@@ -987,6 +987,7 @@
         null,
         2,
         2,
+        2,
         null,
         1,
         1,
@@ -1001,6 +1002,7 @@
         null
       ],
       "/Users/ianmacdonald/Sites/portfolio/app/models/post.rb": [
+        1,
         1,
         1,
         1,
@@ -1073,6 +1075,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         null,
         null,
@@ -1126,7 +1130,7 @@
         null,
         null,
         1,
-        7,
+        8,
         null,
         null
       ],
@@ -1255,6 +1259,6 @@
         null
       ]
     },
-    "timestamp": 1436567830
+    "timestamp": 1436571166
   }
 }
