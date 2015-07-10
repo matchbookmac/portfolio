@@ -1,23 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :destroy]
 
   def index
     @users = User.all
   end
 
   def show
-  end
-
-  def edit
-  end
-
-  def update
-    if @user.update(user_params)
-      flash[:notice] = "Thanks for updating your user, #{@user.first_name}!"
-      redirect_to user_path(@user)
-    else
-      render :edit
-    end
   end
 
   def destroy

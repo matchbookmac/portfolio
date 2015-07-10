@@ -2,21 +2,21 @@ require "rails_helper"
 
 describe "The edit user path" do
   it "will let the user update their user information" do
-    user = FactoryGirl.create(:user)
-    visit edit_user_path(user)
+    user = create(:user)
+    login_as user, scope: :user
+    visit edit_user_registration_path
     fill_in "user_first_name", with: "Ian Charles"
-    fill_in "user_bio", with: "I love to code and cook"
-    click_on "Update User"
-    expect(page).to have_content("updating")
+    fill_in "user_current_password", with: user.password
+    click_on "Update"
+    expect(page).to have_content("successfully")
   end
 
   it "will return an error if a field is left empty" do
-    user = FactoryGirl.create(:user)
-    visit edit_user_path(user)
-    fill_in "user_first_name", with: "Ian Charles"
+    user = create(:user)
+    login_as user, scope: :user
+    visit edit_user_registration_path
     fill_in "user_last_name", with: ""
-    fill_in "user_bio", with: "I love to code and cook"
-    click_on "Update User"
+    click_on "Update"
     expect(page).to have_content("errors")
   end
 end
