@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 gem 'rails'
 gem 'pg'
 gem 'uglifier'
@@ -12,6 +13,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'bootstrap_form'
 gem 'devise'
 gem 'paperclip'
+gem 'rails_12factor'
 
 group :development do
   gem 'byebug'
