@@ -34,9 +34,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :user_with_comments, traits: [:user] do
+    factory :user_with_comments do
       after(:create) do |user|
-        user.comments = [create(:comments)]
+        user.posts = [create(:comments)]
       end
     end
   end

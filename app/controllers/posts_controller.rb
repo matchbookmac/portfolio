@@ -26,25 +26,27 @@ class PostsController < AdminController
 
     if @post.comment
       if @post.save
-        redirect_to @post.post, notice: 'comment was successfully created.'
+        flash[:notice] = 'comment was successfully created.'
+        redirect_to post_path @post.post
       else
-        redirect_to @post
+        flash[:alert] = 'Please try again.'
+        redirect_to post_path @post.post
       end
     elsif current_user.admin?
       if @post.save
-        redirect_to @post, notice: 'post was successfully created.'
+        flash[:notice] = 'post was successfully created.'
+        redirect_to @post
       else
         render :new
       end
-    else
-      redirect_to @post.post, alert: 'you do not have the permissions to create a post'
     end
   end
 
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      flash[:notice] = 'Post was successfully updated.'
+      redirect_to @post
     else
       render :edit
     end
@@ -53,7 +55,8 @@ class PostsController < AdminController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    flash[:notice] = 'Post was successfully destroyed.'
+    redirect_to posts_url
   end
 
 

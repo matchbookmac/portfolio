@@ -1,11 +1,13 @@
 FactoryGirl.define do
 
   factory :post do
+    title "Post"
     content "post"
     comment false
     association :user, factory: :admin
 
     trait :comment do
+      title nil
       content "comment"
       comment true
       association :user, factory: :user

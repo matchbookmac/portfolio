@@ -18,11 +18,7 @@ class ProjectsController < AdminController
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Thanks for adding your project, #{@project.name}!"
-      if @user
-        redirect_to user_path(@user)
-      else
-        redirect_to users_path
-      end
+      redirect_to project_path @project
     else
       render :new
     end
@@ -35,11 +31,7 @@ class ProjectsController < AdminController
   def update
     if @project.update(project_params)
       flash[:notice] = "Thanks for updating your project, #{@project.name}!"
-      if @user
-        redirect_to user_path(@user)
-      else
-        redirect_to users_path
-      end
+      redirect_to project_path @project
     else
       render :edit
     end

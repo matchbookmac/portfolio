@@ -6,6 +6,6 @@ describe "The viewing posts path" do
     user = create(:user_with_comments)
     visit posts_path
     expect(page).to_not have_content("comment")
-    expect(page).to have_content("post")
+    expect(page).to have_content("Post")
   end
 end

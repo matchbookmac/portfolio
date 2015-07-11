@@ -12,7 +12,7 @@
 <div class="col-md-3">
   <% if user_signed_in? %>
     <%= bootstrap_form_for @comment do |f| %>
-      <%= render "layouts/errors", object: @post %>
+      <%= render "layouts/errors", object: @comment %>
 
       <%= f.text_area :content, rows: 3, hide_label: true %>
       <%= f.hidden_field :user_id, value: current_user.id %>
@@ -48,6 +48,11 @@
   <%= render "nav_content" %>
   <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'Edit', edit_post_path(@post), class: "list-group-item" %>
+    <%= link_to "Delete",
+        post_path(@post),
+        class: "list-group-item",
+        data: { confirm: "Are you sure?" },
+        method: :delete %>
     <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
   <% end %>
 <% end %>
