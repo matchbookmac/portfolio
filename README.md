@@ -56,6 +56,11 @@ Create database
 > rake db:seed
 ```
 
+Run tests
+```console
+> rspec
+```
+
 Start App:
 ```console
 > rails s
