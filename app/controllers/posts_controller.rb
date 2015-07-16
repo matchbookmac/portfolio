@@ -26,8 +26,11 @@ class PostsController < AdminController
 
     if @post.comment
       if @post.save
-        flash[:notice] = 'comment was successfully created.'
-        redirect_to post_path @post.post
+        flash[:notice] = 'Comment was successfully created.'
+        respond_to do |format|
+          format.html { redirect_to post_path(@post.post) }
+          format.js
+        end
       else
         flash[:alert] = 'Please try again.'
         redirect_to post_path @post.post

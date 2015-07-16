@@ -1,0 +1,12 @@
+<blockquote>
+  <p><%= object.content %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "",
+            post_path(object),
+            class: "glyphicon glyphicon-remove pull-right",
+            data: { confirm: "Are you sure?" },
+            method: :delete %>
+      <% end %>
+  </p>
+  <footer><%= object.user.first_name %></footer>
+</blockquote>

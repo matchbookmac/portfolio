@@ -11,7 +11,7 @@
 
 <div class="col-md-3">
   <% if user_signed_in? %>
-    <%= bootstrap_form_for @comment do |f| %>
+    <%= bootstrap_form_for @comment, remote: true do |f| %>
       <%= render "layouts/errors", object: @comment %>
 
       <%= f.text_area :content, rows: 3, hide_label: true %>
@@ -26,22 +26,13 @@
     <%= link_to "Sign up to comment", new_user_registration_path, class: "btn btn-default btn-block" %>
   <% end %>
   <hr>
-  <% if @post.posts.any? %>
-    <% @post.posts.each do |comment| %>
-      <blockquote>
-        <p><%= comment.content %>
-            <% if user_signed_in? && current_user.admin? %>
-              <%= link_to "",
-                  post_path(comment),
-                  class: "glyphicon glyphicon-remove pull-right",
-                  data: { confirm: "Are you sure?" },
-                  method: :delete %>
-            <% end %>
-        </p>
-        <footer><%= comment.user.first_name %></footer>
-      </blockquote>
+  <div id="comments">
+    <% if @post.posts.any? %>
+      <% @post.posts.each do |comment| %>
+        <%= render "comment", object: comment %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <%= content_for :nav do %>
