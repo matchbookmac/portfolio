@@ -7,8 +7,8 @@
   <div class="col-md-6">
     <%= f.text_field :first_name %>
     <%= f.text_field :last_name %>
-    <%= f.text_field :github_URL, placeholder: "https://github.com/<YOUR USERNAME>" %>
+    <%= f.url_field :github_URL, placeholder: "https://github.com/<YOUR USERNAME>" %>
   </div>
-  
+
   <%= f.submit class: "btn btn-success btn-block" %>
 <% end %>

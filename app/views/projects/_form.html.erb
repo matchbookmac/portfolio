@@ -3,10 +3,10 @@
 <%= bootstrap_form_for @project do |f| %>
   <div class="col-md-6 clearfix">
     <%= f.text_field :name %>
-    <%= f.text_field :repo_URL,
+    <%= f.url_field :repo_URL,
         hide_label: true,
         placeholder: "Repo URL" %>
-    <%= f.text_field :URL,
+    <%= f.url_field :URL,
         hide_label: true,
         placeholder: "Live Project URL (if applicable)" %>
     <div class="col-md-6 clearfix">

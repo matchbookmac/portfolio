@@ -1,8 +1,9 @@
 
 <h3> <%= @project.name %>
   <small class="muted">
-    <%= link_to "Github repo", @project.repo_URL, target: "#" %> |
-    <% if @project.URL %>
+    <%= link_to "Github repo", @project.repo_URL, target: "#" %>
+    <% if @project.URL != "" %>
+      |
       <%= link_to "Live Project Page", @project.URL, target: "#" %>
     <% end %>
   </small>
