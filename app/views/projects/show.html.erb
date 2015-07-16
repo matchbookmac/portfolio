@@ -9,7 +9,19 @@
   </small>
 </h3>
 <hr>
-<p><span class="lead">Project Description: </span><%= @project.description %></p>
+<div class="col-md-6">
+  <p><span class="lead">Project Description: </span><%= @project.description %></p>
+</div>
+<div class="col-md-6">
+  <p><span class="lead">Project Categories: </span></p>
+  <div class="list-group">
+    <% if @project.categories.any? %>
+      <% @project.categories.each do |cat| %>
+        <%= link_to cat.language, category_path(cat), class: "list-group-item" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <% content_for :nav do %>
   <%= render "nav_content" %>
