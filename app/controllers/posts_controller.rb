@@ -57,9 +57,14 @@ class PostsController < AdminController
 
   # DELETE /posts/1
   def destroy
-    @post.destroy
+    @comment = @post
+    @post = @comment.post
+    @comment.destroy
     flash[:notice] = 'Post was successfully destroyed.'
-    redirect_to posts_url
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.js
+    end
   end
 
 
