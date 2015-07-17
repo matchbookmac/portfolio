@@ -10,11 +10,21 @@ FactoryGirl.define do
 
     trait :admin do
       admin true
+      first_name "Nice"
+      last_name  "Admin"
       sequence(:email) { |n| "admin#{n}@user.com" }
       sequence(:password, 10000000) { |n| "#{n}admin" }
     end
 
+    trait :logged_in do
+      after(:create) { |user| login_as user, scope: :user }
+    end
+
+    factory :logged_in_user, traits: [:logged_in]
+
     factory :admin, traits: [:admin]
+
+    factory :logged_in_admin, traits: [:admin, :logged_in]
 
     factory :admin_with_projects, traits: [:admin] do
       after(:create) do |admin|

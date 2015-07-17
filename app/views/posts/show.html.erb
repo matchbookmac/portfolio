@@ -11,9 +11,6 @@
 
 <div class="col-md-3">
   <% if user_signed_in? %>
-    <div id="new-comment-button">
-      <%= link_to "Comment", new_post_path, remote: true, class: "btn btn-default btn-block" %>
-    </div>
     <%= bootstrap_form_for @comment, remote: true do |f| %>
       <%= render "layouts/errors", object: @comment %>
 
@@ -22,16 +19,19 @@
       <%= f.hidden_field :post_id, value: @post.id %>
       <%= f.hidden_field :comment, value: true %>
       <div class="actions">
-        <%= f.submit "Comment", class: "btn btn-default btn-block" %>
+        <%= f.submit "Post Comment", class: "btn btn-default btn-block" %>
       </div>
     <% end %>
+    <div id="new-comment-button">
+      <%= link_to "Comment", new_post_path, remote: true, class: "btn btn-default btn-block" %>
+    </div>
   <% else %>
     <%= link_to "Sign up to comment", new_user_registration_path, class: "btn btn-default btn-block" %>
   <% end %>
   <hr>
   <div id="comments">
     <% if @post.posts.any? %>
-      <% @post.posts.each do |comment| %>
+      <% @post.posts.reverse_order.each do |comment| %>
         <%= render "comment", object: comment %>
       <% end %>
     <% end %>
