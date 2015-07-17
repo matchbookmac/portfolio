@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/portfolio/spec/features/categories/destroy_category_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/categories/destroy_category_path_spec.rb": [
         1,
         null,
         1,
@@ -22,7 +22,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/rails_helper.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -95,14 +95,14 @@
         1,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/environment.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/portfolio/config/application.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/application.rb": [
         1,
         null,
         1,
@@ -153,12 +153,12 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/boot.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/Guest/Desktop/portfolio/config/environments/test.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/environments/test.rb": [
         1,
         null,
         null,
@@ -202,7 +202,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/assets.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -215,7 +215,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/backtrace_silencers.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -224,12 +224,12 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/cookies_serializer.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/devise.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -496,13 +496,13 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/filter_parameter_logging.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/inflections.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -520,18 +520,18 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/mime_types.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/session_store.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/Guest/Desktop/portfolio/config/initializers/wrap_parameters.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -547,7 +547,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/factories/categories.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/factories/categories.rb": [
         1,
         1,
         23,
@@ -569,7 +569,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/factories/posts.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/factories/posts.rb": [
         1,
         null,
         1,
@@ -609,7 +609,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/factories/projects.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/factories/projects.rb": [
         1,
         1,
         20,
@@ -632,7 +632,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/factories/user.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/factories/user.rb": [
         1,
         null,
         1,
@@ -677,7 +677,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/config/routes.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/config/routes.rb": [
         1,
         1,
         1,
@@ -699,7 +699,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/models/user.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/models/user.rb": [
         1,
         null,
         null,
@@ -722,90 +722,15 @@
         null,
         null,
         1,
-        19,
-        null,
-        null
-      ],
-      "/Users/Guest/Desktop/portfolio/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Guest/Desktop/portfolio/spec/features/categories/edit_category_path_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        18,
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/categories/new_category_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/helpers/application_helper.rb": [
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/posts/destroy_post_path_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/Guest/Desktop/portfolio/spec/features/posts/edit_post_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/categories/edit_category_path_spec.rb": [
         1,
         null,
         1,
@@ -836,7 +761,82 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/posts/new_comment_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/categories/new_category_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/posts/destroy_post_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/posts/edit_post_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/posts/new_comment_path_spec.rb": [
         1,
         null,
         1,
@@ -888,7 +888,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/posts/new_post_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/posts/new_post_path_spec.rb": [
         1,
         null,
         1,
@@ -918,7 +918,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/posts/view_posts_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/posts/view_posts_path_spec.rb": [
         1,
         null,
         1,
@@ -931,39 +931,8 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/projects/destroy_project_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/projects/destroy_project_path_spec.rb": [
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/Guest/Desktop/portfolio/spec/features/projects/edit_project_path_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         1,
         1,
@@ -983,7 +952,38 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/projects/new_project_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/projects/edit_project_path_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/projects/new_project_path_spec.rb": [
         1,
         null,
         1,
@@ -1016,7 +1016,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/users/destroy_user_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/destroy_user_path_spec.rb": [
         1,
         null,
         1,
@@ -1029,7 +1029,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/users/edit_user_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/edit_user_path_spec.rb": [
         1,
         null,
         1,
@@ -1053,7 +1053,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/users/new_user_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/new_user_path_spec.rb": [
         1,
         null,
         1,
@@ -1076,7 +1076,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/users/sign_in_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/sign_in_path_spec.rb": [
         1,
         null,
         1,
@@ -1098,7 +1098,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/features/users/sign_out_path_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/features/users/sign_out_path_spec.rb": [
         1,
         null,
         1,
@@ -1111,7 +1111,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/models/category_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/models/category_spec.rb": [
         1,
         null,
         1,
@@ -1123,7 +1123,7 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/models/category.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/models/category.rb": [
         1,
         1,
         1,
@@ -1133,7 +1133,7 @@
         1,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/models/post_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/models/post_spec.rb": [
         1,
         null,
         1,
@@ -1155,7 +1155,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/models/post.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/models/post.rb": [
         1,
         1,
         1,
@@ -1167,7 +1167,7 @@
         6,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/models/project_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/models/project_spec.rb": [
         1,
         null,
         1,
@@ -1180,7 +1180,7 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/models/project.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/models/project.rb": [
         1,
         1,
         1,
@@ -1191,7 +1191,7 @@
         1,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/spec/models/user_spec.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -1224,7 +1224,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/categories_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/categories_controller.rb": [
         1,
         1,
         null,
@@ -1280,7 +1280,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/admin_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/admin_controller.rb": [
         1,
         1,
         null,
@@ -1296,7 +1296,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/application_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -1315,7 +1315,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/users_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -1339,7 +1339,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/posts_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/posts_controller.rb": [
         1,
         1,
         null,
@@ -1350,7 +1350,7 @@
         null,
         null,
         1,
-        11,
+        9,
         null,
         null,
         null,
@@ -1368,6 +1368,11 @@
         null,
         6,
         4,
+        4,
+        2,
+        3,
+        2,
+        null,
         2,
         2,
         3,
@@ -1376,9 +1381,6 @@
         null,
         2,
         2,
-        null,
-        2,
-        2,
         1,
         1,
         null,
@@ -1419,7 +1421,7 @@
         1,
         null,
         1,
-        16,
+        14,
         null,
         null,
         null,
@@ -1428,7 +1430,7 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/portfolio/app/controllers/projects_controller.rb": [
+      "/Users/ianmacdonald/Sites/portfolio/app/controllers/projects_controller.rb": [
         1,
         1,
         null,
@@ -1486,6 +1488,6 @@
         null
       ]
     },
-    "timestamp": 1437090093
+    "timestamp": 1437150639
   }
 }

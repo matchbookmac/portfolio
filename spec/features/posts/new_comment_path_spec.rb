@@ -18,7 +18,7 @@ describe "The new comment path" do
       login_as user, scope: :user
       visit post_path(admin.posts.first)
       click_on "Comment"
-      expect(page).to have_content("try again")
+      expect(page).to have_content("error")
     end
 
     it "will not let an user create a comment without signing in" do
@@ -44,7 +44,7 @@ describe "The new comment path" do
       login_as user, scope: :user
       visit post_path(admin.posts.first)
       click_on "Comment"
-      expect(page).to have_content("try again")
+      expect(page).to have_content("error")
     end
   end
 end

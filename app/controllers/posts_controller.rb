@@ -25,15 +25,17 @@ class PostsController < AdminController
     @post = Post.new(post_params)
 
     if @post.comment
-      if @post.save
-        flash[:notice] = 'Comment was successfully created.'
-        respond_to do |format|
+      respond_to do |format|
+        if @post.save
+          flash[:notice] = 'Comment was successfully created.'
           format.html { redirect_to post_path(@post.post) }
           format.js
+        else
+          @comment = @post
+          @post = @comment.post
+          format.html { render :show }
+          format.js
         end
-      else
-        flash[:alert] = 'Please try again.'
-        redirect_to post_path @post.post
       end
     elsif current_user.admin?
       if @post.save

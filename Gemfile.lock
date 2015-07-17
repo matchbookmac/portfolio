@@ -259,6 +259,7 @@ DEPENDENCIES
   turbolinks
   uglifier
   web-console
+  websocket-driver (~> 0.6.0)
 
 BUNDLED WITH
    1.10.5

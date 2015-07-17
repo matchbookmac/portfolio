@@ -1,4 +1,9 @@
-$("#post_content").val('');
-$("#comments").prepend("<%=j render 'comment', object: @post %>");
-$("#flash-notice").append("<div class='flash alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='notice'><%= notice %></span></div>");
-window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
+$("#errors").remove();
+<% if @comment && @comment.errors.any? %>
+  $("#new_post").prepend("<%=j render 'layouts/errors', object: @comment %>")
+<% else %>
+  $("#post_content").val(null);
+  $("#comments").prepend("<%=j render 'comment', object: @post %>");
+  $("#flash-notice").append("<div class='flash alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='notice'><%= notice %></span></div>");
+  window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
+<% end %>
