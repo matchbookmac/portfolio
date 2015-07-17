@@ -11,6 +11,9 @@
 
 <div class="col-md-3">
   <% if user_signed_in? %>
+    <div id="new-comment-button">
+      <%= link_to "Comment", new_post_path, remote: true, class: "btn btn-default btn-block" %>
+    </div>
     <%= bootstrap_form_for @comment, remote: true do |f| %>
       <%= render "layouts/errors", object: @comment %>
 

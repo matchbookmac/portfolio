@@ -1,4 +1,4 @@
-<blockquote id="comment_<%= @post.id %>">
+<blockquote id="comment_<%= object.id %>">
   <p><%= object.content %>
       <% if user_signed_in? && current_user.admin? %>
         <%= link_to "",
