@@ -31,4 +31,12 @@ describe User do
       expect(user.projects_with_category(category_0)).to eql [project_0]
     end
   end
+
+  describe "#non_reference_users" do
+    it "will return an array of users that are not already references for the current user" do
+      user = create(:user_with_references)
+      users = create_list(:user, 5)
+      expect(user.non_reference_users).to eql users
+    end
+  end
 end

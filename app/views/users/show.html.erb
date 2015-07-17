@@ -4,27 +4,33 @@
   </small>
 </h3>
 <hr>
-<p><span class="lead">Bio: </span><%= @user.bio %></p>
 
-<div class="col-md-6">
-  <p class="lead text-center">Categories</p>
-  <div class="list-group">
-    <% if @user.categories.any? %>
-      <% @user.categories.each do |category| %>
-        <%= link_to category.language, category_path(category, user_id: @user.id), class: "list-group-item text-center" %>
+<div id="profile-content">
+  <p><span class="lead">Bio: </span><%= @user.bio %></p>
+
+  <div class="col-md-6">
+    <p class="lead text-center">Categories</p>
+    <div class="list-group">
+      <% if @user.categories.any? %>
+        <% @user.categories.each do |category| %>
+          <%= link_to category.language, category_path(category, user_id: @user.id), class: "list-group-item text-center" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <p class="lead text-center">Projects</p>
+    <div class="list-group">
+      <% if @user.projects.any? %>
+        <% @user.projects.each do |project| %>
+          <%= link_to project.name, project_path(project), class: "list-group-item text-center" %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-<div class="col-md-6">
-  <p class="lead text-center">Projects</p>
-  <div class="list-group">
-    <% if @user.projects.any? %>
-      <% @user.projects.each do |project| %>
-        <%= link_to project.name, project_path(project), class: "list-group-item text-center" %>
-      <% end %>
-    <% end %>
-  </div>
+
+<div id="references">
 </div>
 
 <% content_for :nav do %>
@@ -43,6 +49,12 @@
           class: "list-group-item" %>
     </div>
     <div class="list-group nav-group">
+      <div id="new-reference-link">
+        <%= link_to "Add a Reference",
+            new_relationship_path,
+            class: "list-group-item",
+            remote: true %>
+      </div>
       <%= link_to "Edit #{@user.first_name}'s Profile",
           edit_user_registration_path,
           class: "list-group-item text-warning" %>

@@ -1,0 +1,14 @@
+
+<div class="col-md-6">
+  <%= bootstrap_form_for @reference, remote: true do |f| %>
+    <%= f.collection_select(:reference_id, current_user.non_reference_users,
+        :id,
+        :full_name,
+        { include_blank: false,
+          label: "Existing Users"}) %>
+    <%= f.text_field :relationship %>
+    <%= f.submit "Add Reference", class: "btn btn-default btn-block" %>
+  <% end %>
+  <br>
+  <!-- <%= link_to "Create New Reference", new_user_path, remote: true, class: "btn btn-default btn-block" %> -->
+</div>

@@ -8,8 +8,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :projects
   has_many :posts
 
-  has_many :references, foreign_key: :reference_id, class_name: :Relationship
-  has_many :users, through: :references, source: :user
+  has_many :relationships
+  has_many :references, through: :relationships, source: :reference
+  has_many :users, through: :relationships, source: :user
+  # has_many :references, foreign_key: :reference_id, class_name: :Relationship
+  # has_many :users, through: :references, source: :user
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -20,6 +23,10 @@ class User < ActiveRecord::Base
       return_projects.push(project) if project.categories.include?(category)
     end
     return_projects
+  end
+
+  def non_reference_users
+    User.all.reject { |user| (user == self || references.include?(user)) }
   end
 
   def full_name

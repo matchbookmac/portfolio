@@ -49,5 +49,25 @@ FactoryGirl.define do
         user.posts = [create(:comments)]
       end
     end
+
+    factory :users do
+      transient do
+        users_count 3
+      end
+
+      after(:create) do |user, evaluator|
+        create_list(:user, evaluator.users_count)
+      end
+    end
+
+    factory :user_with_references do
+      transient do
+        relationships_count 3
+      end
+
+      after(:create) do |user, evaluator|
+        create_list(:relationship, evaluator.relationships_count, user: user)
+      end
+    end
   end
 end

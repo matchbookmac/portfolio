@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  resources :users, except: ['new', 'create', 'edit', 'update']
+  resources :users, except: ['create', 'edit', 'update']
   resources :categories
   resources :projects
-
+  resources :relationships, only: ['new', 'create']
 end

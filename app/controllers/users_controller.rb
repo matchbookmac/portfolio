@@ -6,6 +6,7 @@ class UsersController < AdminController
   end
 
   def show
+    @reference = Relationship.new
   end
 
   def destroy

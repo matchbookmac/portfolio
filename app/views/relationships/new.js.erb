@@ -1,0 +1,6 @@
+$("#profile-content").hide();
+$("#new-reference-link").children().remove();
+$("#new-reference-link").append("<%=j link_to 'Cancel Editing References',
+    :back,
+    class: 'list-group-item' %>");
+$("#references").prepend("<%=j render 'form' %>");

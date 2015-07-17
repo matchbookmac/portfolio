@@ -1,0 +1,8 @@
+<% if @reference && @reference.errors.any? %>
+  $("#references").prepend("<%=j render 'layouts/errors', object: @reference %>")
+<% else %>
+  $("#references").prepend("HI!");
+  $("#relationship_relationship").val("");
+  $("#flash-notice").append("<div class='flash alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><span id='notice'><%= notice %></span></div>");
+  window.setTimeout(function() { $(".flash").alert().slideUp(); }, 5000);
+<% end %>
