@@ -12,11 +12,9 @@
     <div class="list-group">
       <a class="list-group-item"><span class="glyphicon glyphicon-th-list center-block" id="nav-button"></span></a>
     </div>
-    <div class="list-group nav-group">
+    
+    <%= yield :nav %>
 
-
-      <%= yield :nav %>
-    </div>
   </div>
   <div class="container clearfix">
     <span class="pull-right">

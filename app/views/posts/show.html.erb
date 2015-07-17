@@ -41,12 +41,14 @@
 <%= content_for :nav do %>
   <%= render "nav_content" %>
   <% if user_signed_in? && current_user.admin? %>
-    <%= link_to 'Edit', edit_post_path(@post), class: "list-group-item" %>
-    <%= link_to "Delete",
-        post_path(@post),
-        class: "list-group-item",
-        data: { confirm: "Are you sure?" },
-        method: :delete %>
-    <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
+    <div class="list-group nav-group">
+      <%= link_to 'Edit', edit_post_path(@post), class: "list-group-item" %>
+      <%= link_to "Delete",
+          post_path(@post),
+          class: "list-group-item",
+          data: { confirm: "Are you sure?" },
+          method: :delete %>
+      <%= link_to 'New Post', new_post_path, class: "list-group-item" %>
+    </div>
   <% end %>
 <% end %>

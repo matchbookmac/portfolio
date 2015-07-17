@@ -31,7 +31,6 @@ class PostsController < AdminController
     if @post.comment
       respond_to do |format|
         if @post.save
-# binding.pry
           flash[:notice] = 'Comment was successfully created.'
           format.html { redirect_to post_path(@post.post) }
           format.js

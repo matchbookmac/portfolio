@@ -26,13 +26,15 @@
 <% content_for :nav do %>
   <%= render "nav_content" %>
   <% if user_signed_in? && current_user.admin? %>
-    <%= link_to "Edit #{@project.name}",
-        edit_project_path(@project),
-        class: "list-group-item" %>
-    <%= link_to "Delete #{@project.name}",
-        project_path(@project),
-        class: "list-group-item",
-        data: { confirm: "Are you sure?" },
-        method: :delete %>
+    <div class="list-group nav-group">
+      <%= link_to "Edit #{@project.name}",
+          edit_project_path(@project),
+          class: "list-group-item" %>
+      <%= link_to "Delete #{@project.name}",
+          project_path(@project),
+          class: "list-group-item",
+          data: { confirm: "Are you sure?" },
+          method: :delete %>
+    </div>
   <% end %>
 <% end %>

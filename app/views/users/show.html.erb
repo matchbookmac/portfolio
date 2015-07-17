@@ -28,23 +28,29 @@
 </div>
 
 <% content_for :nav do %>
-  <%= link_to "View Categories", categories_path, class: "list-group-item" %>
-  <%= link_to "View Projects", projects_path, class: "list-group-item" %>
-  <%= link_to "View Posts", posts_path, class: "list-group-item" %>
+  <div class="list-group nav-group">
+    <%= link_to "View Categories", categories_path, class: "list-group-item" %>
+    <%= link_to "View Projects", projects_path, class: "list-group-item" %>
+    <%= link_to "View Posts", posts_path, class: "list-group-item" %>
+  </div>
   <% if user_signed_in? && current_user.admin? %>
-    <%= link_to "Add a Category",
-        new_category_path(user_id: @user.id),
-        class: "list-group-item" %>
-    <%= link_to "Add a Project",
-        new_project_path(user_id: @user.id),
-        class: "list-group-item" %>
-    <%= link_to "Edit #{@user.first_name}'s Profile",
-        edit_user_registration_path,
-        class: "list-group-item text-warning" %>
-    <%= link_to "Delete Profile",
-        user_path(@user),
-        class: "list-group-item text-danger",
-        data: { confirm: "Are you sure?" },
-        method: :delete %>
+    <div class="list-group nav-group">
+      <%= link_to "Add a Category",
+          new_category_path(user_id: @user.id),
+          class: "list-group-item" %>
+      <%= link_to "Add a Project",
+          new_project_path(user_id: @user.id),
+          class: "list-group-item" %>
+    </div>
+    <div class="list-group nav-group">
+      <%= link_to "Edit #{@user.first_name}'s Profile",
+          edit_user_registration_path,
+          class: "list-group-item text-warning" %>
+      <%= link_to "Delete Profile",
+          user_path(@user),
+          class: "list-group-item text-danger",
+          data: { confirm: "Are you sure?" },
+          method: :delete %>
+    </div>
   <% end %>
 <% end %>

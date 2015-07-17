@@ -1,5 +1,9 @@
-<%= link_to 'Back', :back, class: "list-group-item" %>
-<%= link_to "View Portfolio", root_path, class: "list-group-item" %>
-<%= link_to "View Projects", projects_path, class: "list-group-item" %>
-<%= link_to "View Categories", categories_path, class: "list-group-item" %>
-<%= link_to "View Posts", posts_path, class: "list-group-item" %>
+<div class="list-group nav-group">
+  <%= link_to 'Back', :back, class: "list-group-item" %>
+  <%= link_to "Home", root_path, class: "list-group-item" %>
+</div>
+<div class="list-group nav-group">
+  <%= link_to "View Projects", projects_path, class: "list-group-item" %>
+  <%= link_to "View Categories", categories_path, class: "list-group-item" %>
+  <%= link_to "View Posts", posts_path, class: "list-group-item" %>
+</div>
