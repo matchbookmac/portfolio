@@ -8,6 +8,9 @@ describe User do
   it { should have_and_belong_to_many :projects}
   it { should have_many :posts }
 
+  it { should have_many :references }
+  it { should have_many :users }
+
   describe "#full_name" do
     it "will return the full name of the profile" do
       user = create(:user)

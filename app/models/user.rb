@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :projects
   has_many :posts
 
+  has_many :references, foreign_key: :reference_id, class_name: :Relationship
+  has_many :users, through: :references, source: :user
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 
